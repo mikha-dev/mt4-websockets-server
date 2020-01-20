@@ -1,0 +1,13 @@
+﻿  main.cpp
+d:\dev\mt4-websockets-server\src\rsjparser.h(114): warning C4018: '<': signed/unsigned mismatch
+d:\dev\mt4-websockets-server\src\rsjparser.h(131): warning C4018: '<': signed/unsigned mismatch
+d:\dev\mt4-websockets-server\src\rsjparser.h(213): warning C4018: '<': signed/unsigned mismatch
+d:\dev\mt4-websockets-server\src\rsjparser.h(333): warning C4018: '<': signed/unsigned mismatch
+d:\dev\mt4-websockets-server\src\rsjparser.h(352): warning C4018: '<': signed/unsigned mismatch
+d:\dev\mt4-websockets-server\src\rsjparser.h(535): warning C4018: '<': signed/unsigned mismatch
+d:\dev\mt4-websockets-server\src\rsjparser.h(658): warning C4018: '>=': signed/unsigned mismatch
+d:\dev\mt4-websockets-server\src\rsjparser.h(727): warning C4018: '<': signed/unsigned mismatch
+  Generating code
+  All 1098 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  mt4-web-sockets-server.vcxproj -> D:\dev\mt4-websockets-server\Release\mt4-web-sockets-server.exe
