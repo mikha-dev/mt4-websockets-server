@@ -3,6 +3,9 @@
 
 //#include "pch.h"
 #include <iostream>
+#include <sstream>
+#include <iterator>
+
 #include <ixwebsocket/IXNetSystem.h>
 #include <ixwebsocket/IXWebSocket.h>
 #include <ixwebsocket/IXWebSocketServer.h>
@@ -39,6 +42,27 @@ int runServer() {
 
 				RSJresource msg_json(msg->str);
 				string channel(msg_json["channel"].as<string>());				
+
+				if (channel.compare("system") == 0) {
+					string command(msg_json["command"].as<string>());
+					std::vector<string> items;
+
+					if (command.compare("get_online") == 0) {
+						std::set<std::shared_ptr<ix::WebSocket>> clients = server.getClients();
+
+						for (auto it : clients) {
+							items.push_back(it->getUrl());
+						}
+
+						std::ostringstream imploded;
+						std::copy(items.begin(), items.end(),
+							std::ostream_iterator<std::string>(imploded, ""));
+
+						cerr << imploded.str() << endl;
+						webSocket->sendText(imploded.str());
+					}
+					return;
+				}
 
 				std::set<std::shared_ptr<ix::WebSocket>> clients = server.getClients();
 
